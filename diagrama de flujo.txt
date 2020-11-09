@@ -1,0 +1,12 @@
+Input:
+tiempo que tarda en derretirse los hielos
+volumen que ocupa el agua en cm3
+Dia del año
+temperatura del freezer
+area recipiente
+obtengo yo:
+altura del sol
+
+Output:
+Luminosidad solar
+Temperatura superficial

@@ -1,0 +1,4 @@
+El experimento consistirá en medir la cantidad de energía solar que recibe un recipiente de área conocida. 
+Para ello, utilizamos un envase de telgopor (un pote de helado) de (x)m2 para que funcione de calorímetro. De esta manera, no hay que considerar términos de pérdida de calor hacia los alrededores durante el tiempo en que se realizan las mediciones. 
+Luego, colocamos (x) cubitos de hielo en nuestro recipiente aislado, que consisten en (x) litros de agua, y los tapamos con un film para evitar que el calor del aire afecte su fusión.
+Finalmente, medimos el tiempo que tardan todos los hielos en derretirse completamente y con las ecuaciones de calorimetría, calculamos el calor intercambiado.

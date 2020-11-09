@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!-- h1 titulo h3 aclaraciones h2 subtitulos h6 creditos -->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>
+            {% block header %}{% endblock %}
+        </title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link href="style.css" rel="stylesheet">
+        <link href="icon.ico" rel="shortcut icon">
+    </head>
+    <body class="body">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="index.html">Introducción</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="procedimiento.html">Procedimiento experimental</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="calorimetria.html">Calorimetría</a>
+                </li> 
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="mediciones.html">Mediciones</a>
+                </li>   
+              </ul>
+            </div>
+          </nav>
+        <div class="principal" id="principal">
+            <br />
+            <br />
+            <h1>{% block titulo %}{% endblock %}</h1>
+            <br />
+            <br />
+            {% block principal %}{% endblock %}
+            <h6 class="creditos"><ul>Por Carolina Kung, Donatella Valeria Orofino y Sebastián Felgueras</ul></h6>
+            <h6 class="creditos"><ul>El código de esta página fue programado casi enteramente por nosotros y se encuentra en <a href="https://github.com/sebipincha/espectro-sol">este repositorio</a> para su libre utilización</ul></h6>
+        </div>
+    </body>
+</html>
