@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<!-- h1 titulo h3 aclaraciones h2 subtitulos h6 creditos -->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>
+            Mediciones
+        </title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link href="style.css" rel="stylesheet">
+        <link href="icon.ico" rel="shortcut icon">
+    </head>
+    <body class="body">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="index.html">Introducción</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="procedimiento.html">Procedimiento experimental</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="calorimetria.html">Calorimetría</a>
+                </li> 
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="astrofisica.html">Astrofísica</a>
+                </li> 
+                <li class="nav-item">
+                  <a class="nav-link" href="mediciones.html">Mediciones</a>
+                </li>  
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="conclusion.html">Conclusión</a>
+                </li>  
+              </ul>
+            </div>
+          </nav>
+        <div class="principal" id="principal">
+            <br />
+            <br />
+            <h1>Mediciones</h1>
+            <br />
+            <br />
+            
+<p class="texto">Para la medición, se utilizó un vaso térmico de calidad profesional como recipiente, dentro del cual se colocó un cubito de hielo. Se colocó un papel film recubriéndolo. </p>
+<img src="mediciones/vaso.jpeg" class="imagenes">
+<p class="texto">Se inició la medición con el cronómetro del celular a las 12:38, cerca de la culminación superior del Sol, y se finalizó a las 13:21, por lo que el intervalo de tiempo para la fusión del cubito de hielo fue de 42 minutos y 9 segundos. Durante ese tiempo, la altura media del Sol fue de 73°. El diámetro del recipiente es 7,7cm y el área por el cual ingresa la luz al recipiente es 46,57 cm^2.</p>
+<img src="mediciones/volumen.jpeg" class="imagenes">
+<p class="texto">Una vez que el hielo estuvo ya derretido, se midió su volumen en cm3 con un vaso medidor y se obtuvo un valor de 25 cm^3. Sabiendo que el peso específico del agua es de 1g/cm^3, obtenemos que la masa de H2O empleada es de 25g.</p>
+<p class="texto">En síntesis, conseguimos los datos que buscábamos: la masa del hielo, el intervalo de tiempo que tarda en derretirse, el área por el cual ingresa la luz y la altura media del Sol durante la medición.</p>
+<p class="texto">Luego de obtenidos los datos, procedimos a ingresarlos en la herramienta desarrollada por nosotros que se encuentra debajo de todo en este mismo apartado y que utliza las ecuaciones mencionadas en los apartados <i>"Astrofísica"</i> y <i>"Calorimetría"</i> y obtuvimos que la temperatura del Sol, de acuerdo con los datos recavados debería ser de 5745.12 K y que la luminosidad de este mismo astro, debería ser de 3.76 * 10^26 W.</p>
+<p class="texto">Por último, cabe mencionar que, de acuerdo a los datos presentes en <a href="https://es.wikipedia.org/wiki/Sol">Wikipedia</a>, el error de nuestros cálculos fue de un 0.57 % para la temperatura y de un 1.75 % para la luminosidad.</p>
+<br />
+<p class="texto">Para concluir este apartado, aquí debajo se encuentra la herramienta desarrollada por nosotros para realizar todos los cálculos necesarios. Por defecto vienen cargados en cada campo los valores que nosotros obtuvimos, pero si usted los modifica, verá instantáneamente cuál es el valor para la temperatura del Sol y para la luminosidad del Sol de acuerdo a los valores ingresados.</p>
+<p class="texto">Si quiere volver a nuestros valores originales, no tiene más que recargar la página o presionar el botón que reza "Resetear los valores" al final de los campos de entrada.</p>
+<form onchange="recalcular();">
+    <p class="aclaraciones">Masa de agua (en gramos o mililitros):</p>
+    <input type="number" value="25" ID="masa" class="ecuaciones">
+    <p class="aclaraciones">Tiempo que tardó en derretirse por completo el cubo de hielo (en segundos):</p>
+    <input type="number" value="2569" id="tiempo" class="ecuaciones">
+    <p class="aclaraciones">Superficie abierta del recipiente aislante que contenía al cubo de hielo (en cm^2):</p>
+    <input type="number" value="46.57" id="area" class="ecuaciones">
+    <p class="aclaraciones">Temperatura del freezer (o de los cubo/s de hielo al iniciar el experimento):</p>
+    <input type="number" value="-18" id="delta_T" class="ecuaciones">
+    <p class="aclaraciones">Altura del sol (en grados sexagesimales):</p>
+    <input type="number" value="73.25" id="altura" class="ecuaciones">
+    <br />
+    <br />
+    <input type="reset" value="Resetear los valores" class="ecuaciones" onclick="window.setTimeout(recalcular, 500);">
+</form>
+<div id="resultados">
+    <p class="texto" id="resultados_temperatura"></p>
+    <p class="texto" id="resultados_luminosidad"></p>
+    <p class="texto" id="porcentaje_temperatura"></p>
+    <p class="texto" id="porcentaje_luminosidad"></p>
+</div>
+<p class="aclaraciones">Los valores de referencia a partir de los cuales se calcula el porcentaje de incerteza son de 5778 K para la temperatura y de 3.827 * 10^26 W para la luminosidad y fueron tomados de <a href="https://es.wikipedia.org/wiki/Sol">Wikipedia</a></p>
+<script src="solar_flare.js"></script>
+
+            <h6 class="creditos"><ul>Por Carolina Kung, Donatella Valeria Orofino y Sebastián Felgueras</ul></h6>
+            <h6 class="creditos"><ul>El código de esta página fue programado casi enteramente por nosotros y se encuentra en <a href="https://github.com/sebipincha/espectro-sol">este repositorio</a> para su libre utilización</ul></h6>
+        </div>
+    </body>
+</html>

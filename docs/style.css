@@ -2,6 +2,7 @@
 .body{
     background-image: url("fondo.png");
     background-repeat: no-repeat;
+    background-size: cover;
 }
 .principal{
     background-color: rgba(0, 0, 0, 0.7);
@@ -22,6 +23,8 @@ h1{
     color: grey;
     text-align: left;
     font-family: Cambria;
+    margin-left: 2%;
+    margin-right: 2%;
 }
 .texto{
     font-family: Georgia;
