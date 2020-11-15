@@ -5,6 +5,7 @@ const radio_sol = 6.96 * Math.pow(10,8);//m
 const d_tierra_sol = 149597870700; //m
 const temperatura_wikipedia = 5778;
 const luminosidad_wikipedia =  3.827 * Math.pow(10,26); 
+const constante_wikipedia = 1361;
 //ALTURA DEL SOL EN RADIANES
 function q_partido_t(calor,tiempo){ //calor en joules y tiempo en segundos
     return calor/tiempo;
@@ -28,9 +29,12 @@ function ecuacion(masa,tiempo,area,altura,delta_T){
     cociente = q_partido_t(heat,tiempo);
     temperatura = temperatura_superficial_sol(cociente,area);
     luminosidad = luminosidad_solar(temperatura);
-    return {'luminosidad':luminosidad,'temperatura':temperatura};
+    constante = constante_solar(luminosidad);
+    return {'luminosidad':luminosidad,'temperatura':temperatura,'constante':constante};
 }
-
+function constante_solar(luminosidad){
+    return luminosidad/(Math.PI*4*Math.pow(d_tierra_sol,2));
+}
 
 
 
@@ -43,6 +47,8 @@ const resultados_temperatura = document.getElementById("resultados_temperatura")
 const resultados_luminosidad = document.getElementById("resultados_luminosidad");
 const porcentaje_temperatura = document.getElementById("porcentaje_temperatura");
 const porcentaje_luminosidad = document.getElementById("porcentaje_luminosidad");
+const resultados_constante = document.getElementById("constante_solar");
+const porcentaje_constante = document.getElementById("porcentaje_constante");
 function recalcular(){
     let masa = masa_field.value / 1000;
     let tiempo = tiempo_field.value;
@@ -54,10 +60,10 @@ function recalcular(){
     console.log([masa,area,altura,delta_T,tiempo])
     resultados_temperatura.innerText = "Temperatura del sol: " + String(resultados['temperatura'].toFixed(2)) + " K";
     resultados_luminosidad.innerText = "Luminosidad del sol: " + String(resultados['luminosidad'].toExponential(2)) + " W";
+    resultados_constante.innerText = "Constante solar: " + String(resultados['constante'].toFixed(2)) + "W/m^2";
     porcentaje_temperatura.innerText = "Porcentaje de error en temperatura: " + String(Math.abs((resultados['temperatura'] * (100/temperatura_wikipedia))-100).toFixed(2))+ "%";
     porcentaje_luminosidad.innerText = "Porcentaje de error en luminosidad: " + String(Math.abs((resultados['luminosidad'] * (100/luminosidad_wikipedia))-100).toFixed(2))+ "%";
-
-
+    porcentaje_constante.innerText = "Porcentaje de error en la constante: " + String(Math.abs((resultados['constante'] * (100/constante_wikipedia))-100).toFixed(2))+ "%";
 }
 recalcular()
 console.log(ecuacion(0.025,2569,0.004657,1.2784537,19));

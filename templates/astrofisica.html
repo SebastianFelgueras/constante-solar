@@ -1,0 +1,21 @@
+{% extends "root.html" %}
+{% block header %}Astrofísica{% endblock %}
+{% block titulo %}Astrofísica{% endblock %}
+{% block principal %}
+<p class="texto">Una vez que calculamos la luminosidad solar a partir de Q (calor) y ∆t (tiempo) del experimento, podemos averiguar el valor de la constante solar y su temperatura efectiva.</p>
+<p class="texto">Primero procederemos a explicar de qué razonamientos nos valimos para nuestros cálculos.</p>
+<p class="texto">En primer lugar, la Ley de Stefan Boltzmann nos permite conocer la intensidad emitida por una estrella por segundo por cada metro cuadrado de superficie. Además, como la estrella que emite dicha energía es el Sol, calculamos la cantidad de energía por segundo que se emite en toda la superficie solar -que suponemos esférica- y que está distribuida de forma homogénea. </p>
+<img class="ecuaciones" src="https://latex.codecogs.com/png.latex?\bg_white&space;L_{Sol}=\sigma&space;.&space;T_{ef_{Sol}}^{4}.4\pi&space;.R_{Sol}^{2}" title="L_{Sol}=\sigma . T_{ef_{Sol}}^{4}.4\pi .R_{Sol}^{2}" />
+<p class="texto">Ahora, pensamos cuánta de la energía que emite el Sol llega a la Tierra, suponiendo que viaja hacia una esfera de radio igual a la distancia entre la Tierra y el Sol. Así, obtenemos que el flujo de energía que llegará a cada metro cuadrado de la esfera valdrá:</p>
+<img class="ecuaciones" src="https://latex.codecogs.com/png.latex?\bg_white&space;F_{R=d_{S-T}}=\frac{L_{Sol}}{A_{R=d_{S-T}}}=&space;\frac{\sigma&space;.&space;T_{ef_{Sol}}^{4}.4\pi&space;.R_{Sol}^{2}}{4\pi&space;.d_{Sol-Tierra}^{2}}" title="F_{R=d_{S-T}}=\frac{L_{Sol}}{A_{R=d_{S-T}}}= \frac{\sigma . T_{ef_{Sol}}^{4}.4\pi .R_{Sol}^{2}}{4\pi .d_{Sol-Tierra}^{2}}" />
+<p class="texto">Luego, vemos cuánta de esta energía llega a la Tierra, recordando que la Tierra tiene extensión y que no recibe la luz solar en toda su superficie sino en lo que sería "una de sus caras". Cabe aclarar, sin embargo, que el "área de la Tierra que enfrenta a la luz" es la proyección de la misma sobre ese frente de radiación: un círculo. En definitiva, la fórmula que describe la radiación solar que recibe la Tierra por segundo resulta:</p>
+<img class="ecuaciones" src="https://latex.codecogs.com/png.latex?\bg_white&space;L_{T}=F_{R=d_{S-T}}.A_{T}=&space;\frac{\sigma&space;.&space;T_{ef_{Sol}}^{4}.4\pi&space;.R_{Sol}^{2}}{4\pi&space;.d_{Sol-Tierra}^{2}}.\pi&space;.R_{Tierra}^{2}" title="L_{T}=F_{R=d_{S-T}}.A_{T}= \frac{\sigma . T_{ef_{Sol}}^{4}.4\pi .R_{Sol}^{2}}{4\pi .d_{Sol-Tierra}^{2}}.\pi .R_{Tierra}^{2}" />
+<p class="texto">Por último, para relacionar lo anterior específicamente con nuestro experimento, recordemos que poseemos un recipiente de telgopor de área conocida A, en lugar de toda la superficie de la Tierra.</p>
+<p class="texto">Entonces la ecuación resultaría:</p>
+<img class="ecuaciones" src="https://latex.codecogs.com/png.latex?\bg_white&space;L=\frac{\sigma&space;.&space;T_{ef_{Sol}}^{4}.4\pi&space;.R_{Sol}^{2}}{4\pi&space;.d_{Sol-Tierra}^{2}}&space;.&space;A&space;=&space;\frac{Q}{\Delta&space;t}" title="L=\frac{\sigma . T_{ef_{Sol}}^{4}.4\pi .R_{Sol}^{2}}{4\pi .d_{Sol-Tierra}^{2}} . A = \frac{Q}{\Delta t}" /><p class="texto">Ahora que hemos evocado estos maravillosos conocimientos a nuestras mentes prodigiosas, estamos listos para aplicarlos.</p>
+<p class="texto">En el anterior apartado (Calorimetría) averiguamos los datos que nos permitirán calcular la luminosidad solar. Por ende, podemos calcular la constante solar y la temperatura efectiva del Sol despejando dichas incógnitas en las ya conocidas ecuaciones:</p>
+<p class="texto">Constante solar:</p>  
+<img class="ecuaciones" src="https://latex.codecogs.com/png.latex?\bg_white&space;F_{R=d_{S-T}}=\frac{\sigma&space;.&space;T_{ef_{Sol}}^{4}&space;.R_{Sol}^{2}}{d_{Sol-Tierra}^{2}}" title="F_{R=d_{S-T}}=\frac{\sigma . T_{ef_{Sol}}^{4} .R_{Sol}^{2}}{d_{Sol-Tierra}^{2}}" />
+<p class="texto">Temperatura efectiva del Sol:</p>
+<img class="ecuaciones" src="https://latex.codecogs.com/png.latex?\bg_white&space;T_{ef_{Sol}}=\sqrt[4]{\frac{Q}{\Delta&space;t}&space;.&space;\frac{d_{Sol-Tierra}^{2}}{\sigma&space;.&space;T_{ef_{Sol}}^{4}.R_{Sol}^{2}}}" title="T_{ef_{Sol}}=\sqrt[4]{\frac{Q}{\Delta t} . \frac{d_{Sol-Tierra}^{2}}{\sigma . T_{ef_{Sol}}^{4}.R_{Sol}^{2}}}" />
+{% endblock %}
